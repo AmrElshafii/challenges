@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src=".//ch1.js"></script>
     <style>
         body {
             margin: 0px;
@@ -51,6 +50,34 @@
             width: 100vw;
             z-index: -1;
         }
+        div.content {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 80px;
+        }
+        div.prompt {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input#number {
+            border: 5px solid gray;
+            width: 50px;
+            height: 50px;
+            padding: 20px;
+            outline: none;
+            font-size: 25px;
+        }
+        #check {
+            background-color: transparent;
+            border: none;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .text {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -61,14 +88,15 @@
     <div class="guessNum">?</div>
     <div class="content">
         <div class="prompt">
-            <input type="text" name="" id="number">
-            <input type="submit" name="" id="check" value="check">
+            <input type="number" name="" id="number">
+            <button id="check">check</button>
         </div>
         <div class="text">
             <p class="stat">start guessing....</p>
-            <p class="score">score: <span class="scoreNum"></span></p>
-            <p class="highscore">highscore: <span class="highNum"></span></p>
+            <p class="score">score: <span class="scoreNum">20</span></p>
+            <p class="highscore">high score: <span class="highNum">0</span></p>
         </div>
     </div>
+    <script src="./ch1.js"></script>
 </body>
 </html>
