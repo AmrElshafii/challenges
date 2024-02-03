@@ -42,7 +42,7 @@ const game = {
     },
 };
 
-let [players1 , players2] = [game.players[0], game.players[1]];
+let [players1 , players2] = game.players;
 let [gk1, ...fieldPlayers1] = [...players1];
 let [gk2, ...fieldPlayers2] = [...players2];
 let allPlayers = [...players1, ...players2];
@@ -50,9 +50,11 @@ let players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 let {team1, x : draw, team2} = game.odds
 
 function printGoals (...playerNames) {
-    for(let i = 0; i <= playerNames.length; i++) {
-        console.log(playerNames[i], game.scored.length)
+    for(let i = 0; i < playerNames.length; i++) {
+        console.log(playerNames[i], playerNames.length)
     }
 }
+printGoals(...players1);
 
-printGoals
+team1 < team2 && console.log("team 1");
+team1 > team2 && console.log("team 2");
