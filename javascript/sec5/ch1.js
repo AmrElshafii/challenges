@@ -57,4 +57,8 @@ function printGoals (...playerNames) {
 printGoals(...players1);
 
 team1 < team2 && console.log("team 1");
+<<<<<<< HEAD
 team1 > team2 && console.log("team 2");
+=======
+team1 > team2 && console.log("team 2");
+>>>>>>> eacf36197f1734e6dd197377de24a908b8b30939
