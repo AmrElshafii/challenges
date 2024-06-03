@@ -79,21 +79,39 @@
 // Tesla.brake()
 // console.dir(EV.prototype)
 
-class car {
+// coding challenge 4
+class CarCl {
     constructor(make, speed) {
         this.make = make;
         this.speed = speed;
     }
     accelerate() {
-        this.name = 'acc'
+        this.speed = this.speed + 10;
+        console.log(this.speed + 'hm/h');
     }
-}
-class person extends car {
-    constructor(make, speed, name) {
+    brake() {
+        this.speed = this.speed - 5;
+        console.log(this.speed + 'km/h');
+        return this;
+    }
+} 
+class EVCl extends CarCl {
+    #charge;
+    constructor(make, speed, charge) {
         super(make, speed);
-        this.name = name;
+        this.#charge = charge;
+    }
+    accelerate() {
+        this.speed += 20;
+        this.#charge -= 1;
+        console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.#charge}%`);
+        return this;
+    }
+    chargeBattery(charge) {
+        this.#charge = charge;
+        return this;
     }
 }
-let amr = new person('amr')
-amr.accelerate()
-console.log(amr)
+let Rivian = new EVCl('Rivian', 120, 23);
+Rivian.accelerate().chargeBattery(22).accelerate().accelerate().accelerate().accelerate().accelerate().accelerate().brake()
+console.log(Rivian)
